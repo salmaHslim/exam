@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits/legumes exam</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<style>
+    body {
+        display: block;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .firstrow {
+        border-radius: 20px;
+        border: 0px solid blue;
+        background-color: #00BBF6;
+        box-shadow: 0 0 5px blue;
+    }
+
+    .custom-line {
+        border-top: 5px solid blue;
+        /* padding: 10px;
+        margin-left: 20px;
+        margin-right: 20px; */
+
+    }
+
+    .inputsearch {
+        border-radius: 5px;
+    }
+
+    .div-lists {
+        padding: 15px 30px;
+        border: 1px solid white;
+        border-radius: 15px;
+        background-color: #59BF46;
+        box-shadow: 0 10px 30px black;
+    }
+
+    .inputsearch:hover {
+        transform: scale(1.1);
+        width: 300px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        text-shadow: 1px 2px 2px black;
+    }
+
+    .firstrow:hover {
+        transform: scale(1.1);
+        transition: all 0.5s ease;
+    }
+
+    .AddTospecificlist {
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .AddTospecificlist:hover {
+        background-color: lightblue;
+    }
+
+    .AddTogeneralList {
+        background-color: #FF3231;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .AddTogeneralList:hover {
+        background-color: #FF7F7F;
+    }
+
+    .searchBtn {
+        background-color: #01BCFB;
+        color: black;
+        width: 150px;
+        height: 30px;
+        border: none;
+    }
+
+    .searchBtn:hover {
+        background-color: #006EFD;
+    }
+
+    .DeleteBtn {
+        background-color: #FF3231;
+        color: white;
+        width: 150px;
+        height: 30px;
+        border: none;
+    }
+
+    .DeleteBtn:hover {
+        background-color: #FF7F7F;
+    }
+
+    .radiobtn {
+        font-size: 19px;
+    }
+
+    .highlightalert {
+        background-color: red;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+
+    <div class="row justify-content-center m-5  rounded firstrow" style="max-width: 1270px;">
+        <div class="col-4 mb-3">
+            <div class="row">
+                <div class="mb-3 p-3 text-white">
+                    <input name="inputfruit" id="inputfruit" cols="40" rows="30"
+                        placeholder="Fruits or legumes"></input>
+                </div>
+                <div class="mb-3 p-3 text-white radiobtn">
+                    <label for=""> <input type="radio" name="fruitOrLegume" value="fruit"
+                            id="fruit"></input>Fruits</label>
+                    <label for=""> <input type="radio" name="fruitOrLegume" value="legume"
+                            id="legume"></input>legume</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="mb-3 p-3 text-white">
+                <div class="btn AddTospecificlist" id="AddTospecificlist">Add to specific list</div>
+                <div class="btn btn-danger AddTogeneralList" id="AddTogeneralList">Add to general list</div>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-primary m-5 rounded" style="max-width: 1270px;">
+        <br>
+        <div class="row  justify-content-center">
+            <div class="col-8 m-1">
+                <div class="row">
+                    <div class="col-5 mb-3 p-3 text-white">
+                        <button class="searchBtn" name="searchBtn" id="searchBtn">Serach for item</button>
+                        <button class="DeleteBtn" name="DeleteBtn" id="DeleteBtn">Delete item</button>
+                    </div>
+                    <div class="mb-3 p-3 text-white">
+                        <input type="text" name="inputsearch" id="inputsearch" class="inputsearch"
+                            placeholder="Search For a Fruits or legumes"></input>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+            </div>
+        </div>
+        <hr class="custom-line">
+        <!-- row 2 -->
+        <div class="row">
+            <div class="col-3">
+                <label for="" class="title text-white">list of fruits</label>
+            </div>
+            <div class="col-3 m-auto d-block">
+                <label for="" class="title text-white">list of fruits and Legumes</label>
+            </div>
+            <div class="col-3 ">
+                <label for="" class="title text-white">list of Legumes</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 ">
+                <div class="div-lists">
+                    <div class="div1fruits" id="div1fruits">
+                        <div class="alert alert-success">
+                            <span class="Fruitvalue">Fruits</span>
+                            <span>-</span>
+                            <span class="nameFruitValue"> apple</span>
+                        </div>
+                        <div class="alert alert-success">
+                            <span class="Fruitvalue">Fruits</span>
+                            <span>-</span>
+                            <span class="nameFruitValue"> mangoes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3  m-auto d-block">
+                <div class="div-lists">
+                    <div class="div1General" id="div1General">
+                        <div class="alert alert-warning">
+                            <span class="Fruitvalue-g">Fruits</span>
+                            <span>-</span>
+                            <span class="nameFruitValue-g"> pineapples</span>
+                        </div>
+                        <div class="alert alert-warning">
+                            <span class="Fruitvalue-g">Fruits</span>
+                            <span>-</span>
+                            <span class="nameFruitValue-g"> bananas</span>
+                        </div>
+                        <div class="alert alert-warning">
+                            <span class="legumevalue-g">legumes</span>
+                            <span>-</span>
+                            <span class="namelegumeValue-g"> potato</span>
+                        </div>
+                        <div class="alert alert-warning">
+                            <span class="legumevalue-g">legumes</span>
+                            <span>-</span>
+                            <span class="namelegumeValue-g"> lentils</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 ">
+                <div class="div-lists">
+                    <div class="div1Legumes" id="div1Legumes">
+                        <div class="alert alert-light">
+                            <span class="legumevalue">legumes</span>
+                            <span>-</span>
+                            <span class="namelegumeValue">broccoli</span>
+                        </div>
+                        <div class="alert alert-light">
+                            <span class="legumevalue">legumes</span>
+                            <span>-</span>
+                            <span class="namelegumeValue">Green beans</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+    </div>
+
+</body>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script>
+    let AddTospecificlist = document.getElementById("AddTospecificlist");
+    let AddTogeneralList = document.getElementById("AddTogeneralList");
+    let deleteBtn = document.getElementById("DeleteBtn");
+    let searchBtn = document.getElementById("searchBtn");
+    let generallist = document.getElementById("div1General");
+
+    AddTospecificlist.addEventListener('click', function () {
+        let inputValue = document.getElementById("inputfruit").value;
+        let radioGroup = document.querySelector('input[name="fruitOrLegume"]:checked');
+
+        if (inputValue === "") {
+            alert("enter name of fruit or legume");
+        }
+        else {
+
+            if (radioGroup) {
+                // Create a new alert 
+                let alertElement = document.createElement("div");
+                alertElement.className = radioGroup.value === "fruit" ? "alert alert-success" : "alert alert-light";
+
+                alertElement.innerHTML = `
+          <span class="
+          ${radioGroup.value === 'fruit' ? 'Fruitvalue' : 'legumevalue'}">
+          ${radioGroup.value === 'fruit' ? 'Fruits' : 'Legumes'}</span>
+          <span>-</span>
+          <span class="${radioGroup.value === 'fruit' ? 'nameFruitValue' : 'namelegumeValue'}">${inputValue}</span>
+    `;
+
+                // Determine list according choice
+                let targetList = radioGroup.value === 'fruit' ? document.getElementById("div1fruits") : document.getElementById("div1Legumes");
+                targetList.appendChild(alertElement);
+
+                // Clear the input field, uncheck radio btn
+                document.getElementById("inputfruit").value = "";
+                radioGroup.checked = false;
+            } else {
+                alert("Please select either Fruits or Legumes.");
+            }
+        }
+    });
+
+    //add to general list
+    AddTogeneralList.addEventListener('click', function () {
+        let generalList = document.getElementById("div1General");
+        let inputValue = document.getElementById("inputfruit").value;
+        let radioGroup = document.querySelector('input[name="fruitOrLegume"]:checked');
+        if (inputValue === "") {
+            alert("enter name of fruit or legume");
+        } else {
+            if (radioGroup) {
+
+                let newalert = `<div class="alert alert-warning">
+                <span class="
+                ${radioGroup.value === 'fruit' ? 'Fruitvalue-g' : 'legumevalue-g'}">
+                ${radioGroup.value === 'fruit' ? 'Fruits' : 'Legumes'}</span>
+                <span>-</span>
+                <span class="${radioGroup.value === 'fruit' ? 'nameFruitValue-g' : 'namelegumeValue-g'}">${inputValue}</span></div>
+            `;
+
+                generalList.innerHTML += newalert;// add to (general list) new alert
+
+                // Clear the input field and uncheck radio btn
+                document.getElementById("inputfruit").value = "";
+                radioGroup.checked = false;
+                alert("add success");
+            }
+            else {
+                alert("Please select Fruits or Legumes");
+            }
+        }
+    });
+
+    // search
+    searchBtn.addEventListener('click', function () {
+        let searchInput = document.getElementById("inputsearch").value.toLowerCase();
+        if (searchInput === "") {
+            alert("please enter fruit or legume first");
+        } else {
+            alert("you search for: " + searchInput);
+
+            // Search  input in each list and change class to highlitalert
+            changeAlerts("div1fruits", searchInput, 'Fruitvalue', 'nameFruitValue', 'alert-success');
+            changeAlerts("div1Legumes", searchInput, 'legumevalue', 'namelegumeValue', 'alert-light');
+            changeAlerts("div1General", searchInput, 'Fruitvalue-g', 'nameFruitValue-g', 'alert-warning');
+            changeAlerts("div1General", searchInput, 'legumevalue-g', 'namelegumeValue-g', 'alert-warning');
+        }
+
+    });
+
+    function changeAlerts(listId, searchInput, typeClass, nameClass, alertClass) {
+        let list = document.getElementById(listId);
+        let alerts = list.getElementsByClassName(alertClass);
+
+        for (let i = 0; i < alerts.length; i++) {
+            let alert = alerts[i];
+
+            let type = alert.querySelector(`.${typeClass}`).textContent.toLowerCase();
+            let name = alert.querySelector(`.${nameClass}`).textContent.toLowerCase();
+
+            if (name.includes(searchInput) && type === 'fruits') {
+                alert.classList.add('highlightalert');
+            } else {
+            }
+            if (name.includes(searchInput) && type === 'legumes') {
+                alert.classList.add('highlightalert');
+            } else {
+            }
+        }
+    }
+
+    //delete btn
+    DeleteBtn.addEventListener('click', function () {
+        let highlightedAlerts = document.querySelectorAll('.highlightalert');
+        if (highlightedAlerts.length > 0) {
+            let confirmDelete = confirm("Are you sure you want to delete the red alert items?");
+
+            if (confirmDelete) {
+                // User clicked OK
+                highlightedAlerts.forEach(alert => {
+                    alert.remove();
+                });
+                document.getElementById("inputsearch").value = "";//clear input search
+            }
+        } else {
+            alert("No items to delete");
+        }
+    });
+
+
+    // click on general list
+    generallist.addEventListener('click', function (event) {
+        let clickedAlert = event.target.closest('.alert-warning');
+
+        if (clickedAlert) {
+            let alertType = clickedAlert.querySelector('.Fruitvalue-g, .legumevalue-g').textContent;
+            let alertName = clickedAlert.querySelector('.nameFruitValue-g, .namelegumeValue-g').textContent;
+
+
+            let newAlert = document.createElement("div");
+            if (alertType === 'Fruits') {
+                newAlert.className = "alert alert-success";
+            }
+            else {
+                newAlert.className = "alert alert-light";
+            }
+            newAlert.innerHTML = `
+            <span class="${alertType === 'Fruits' ? 'Fruitvalue' : 'legumevalue'}">${alertType}</span>
+            <span>-</span>
+            <span class="${alertType === 'Fruits' ? 'nameFruitValue' : 'namelegumeValue'}">${alertName}</span>
+        `;
+
+            let targetList;
+            if (alertType === 'Fruits') {
+                targetList = document.getElementById("div1fruits");
+            } else {
+                targetList = document.getElementById("div1Legumes");
+            }
+            targetList.appendChild(newAlert);
+
+            clickedAlert.remove();// Remove the alert clicked
+        }
+    });
+
+
+
+
+
+
+</script>
+
+</html>
